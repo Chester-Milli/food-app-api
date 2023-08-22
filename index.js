@@ -4,6 +4,7 @@ const app = express()
 const morgan = require("morgan")
 require("dotenv").config()
 const cookieParser = require("cookie-parser")
+const cors = require("cors")
 
 
 
@@ -44,7 +45,7 @@ app.use(morgan("dev"))
 app.use(express.json({limit:"10mb"}))
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
-
+app.use(cors())
 
 
 // use routes
